@@ -52,22 +52,41 @@
   :init (dolist (hook '(css-mode-hook html-mode-hook sass-mode-hook))
 	  (add-hook hook 'rainbow-mode)))
 
+(use-package switch-window
+  :ensure t
+  :config
+  (setq switch-window-input-style 'minibuffer)
+  (setq switch-window-increasew 4)
+  (setq switch-window-threshold 2)
+  (setq switch-window-shortcut-style 'qwerty)
+  (setq switch-window-qwerty-shortcuts
+	'("a" "s" "d" "f" "j" "k" "l"))
+  :bind ([remap other-window] . switch-window))
+
+(defun split-and-follow-horizontally ()
+  (interactive)
+  (split-window-below)
+  (balance-windows)
+  (other-window 1))
+
+(defun split-and-follow-vertically ()
+  (interactive)
+  (split-window-right)
+  (balance-windows)
+  (other-window 1))
+
 (setq inhibit-startup-message t)
 (tool-bar-mode -1)
 (menu-bar-mode -1)
 (scroll-bar-mode -1)
 (defalias 'yes-or-no-p 'y-or-n-p)
 (setq column-number-mode t)
-(global-set-key (kbd "s-<return>") 'ansi-term)
 (setq scroll-conservatively 100)
 (setq ring-bell-function 'ignore)
 (when window-system (global-hl-line-mode t))
 (when window-system (global-prettify-symbols-mode t))
 (setq make-backup-file nil)
 (setq auto-save-default nil)
-(global-set-key (kbd "M-x") 'smex)
-(global-set-key (kbd "C-c e") 'config-visit)
-(global-set-key (kbd "C-c r") 'config-reload)
 
 (set-frame-position (selected-frame) 50 50)
 (setq initial-frame-alist
@@ -80,3 +99,10 @@
 	(width . 140) ; character
 	(height . 450) ; lines
 	))
+
+(global-set-key (kbd "M-x") 'smex)
+(global-set-key (kbd "C-c e") 'config-visit)
+(global-set-key (kbd "C-c r") 'config-reload)
+(global-set-key (kbd "s-<return>") 'ansi-term)
+(global-set-key (kbd "C-x 2") 'split-and-follow-horizontally)
+(global-set-key (kbd "C-x 3") 'split-and-follow-vertically)
