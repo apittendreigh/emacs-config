@@ -35,6 +35,23 @@
 
 (setq ibuffer-expert t)
 
+(use-package avy
+  :ensure t
+  :bind ("M-s" . avy-goto-char))
+
+(defun config-visit ()
+  (interactive)
+  (find-file "~/.emacs.d/config.org"))
+
+(defun config-reload ()
+  (interactive)
+  (org-babel-load-file (expand-file-name "~/.emacs.d/config.org")))
+
+(use-package rainbow-mode
+  :ensure t
+  :init (dolist (hook '(css-mode-hook html-mode-hook sass-mode-hook))
+	  (add-hook hook 'rainbow-mode)))
+
 (setq inhibit-startup-message t)
 (tool-bar-mode -1)
 (menu-bar-mode -1)
@@ -49,6 +66,8 @@
 (setq make-backup-file nil)
 (setq auto-save-default nil)
 (global-set-key (kbd "M-x") 'smex)
+(global-set-key (kbd "C-c e") 'config-visit)
+(global-set-key (kbd "C-c r") 'config-reload)
 
 (set-frame-position (selected-frame) 50 50)
 (setq initial-frame-alist

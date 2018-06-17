@@ -1,0 +1,27 @@
+;;; -*- coding: utf-8 -*-
+
+;; ----- ido-last-directory-list -----
+(
+ ("/Users/alex/" . ".emacs.d/")
+)
+
+;; ----- ido-work-directory-list -----
+(
+ "/Users/alex/.emacs.d/"
+)
+
+;; ----- ido-work-file-list -----
+(
+ "config.org"
+ "init.el"
+)
+
+;; ----- ido-dir-file-cache -----
+(
+ ("/Users/alex/.emacs.d/" (23334 15646 210499 89000) ".gitignore~" ".git/" "elpa/" ".gitignore" "init.el" "url/" "auto-save-list/" "config.el" "ido.last~" "config.org" "smex-items" "init.el~" "ido.last" "../" "./")
+
+ ("/Users/alex/" (23334 5484 9826 801000) ".astropy/" ".viminfo" ".bash_history" ".gitconfig" ".cache/" "Downloads/" ".zcompdump-Alex’s MacBook Pro-5.3" ".oh-my-zsh/" ".bash_profile" ".vscode/" ".rstudio-desktop/" "Documents/" ".npm/" ".jupyter/" ".ipynb_checkpoints/" ".Trash/" ".Rapp.history" "Dropbox/" ".zsh-update" "Applications/" "Movies/" ".ssh/" ".sonarlint/" "MEGA/" ".sh_history" ".idlerc/" ".insert-shebang.log" ".dropbox/" "Public/" "Google Drive/" ".bash_sessions/" ".cups/" ".emacs.d/" ".spyder-py3/" ".oracle_jre_usage/" ".glue/" ".matplotlib/" "Library/" "Desktop/" ".ipython/" ".zsh_history" ".mysqlsh/" ".nvm/" ".pylint.d/" "Pictures/" "Projects/" "Creative Cloud Files/" ".local/" ".plotly/" "OneDrive/" ".zshrc" ".subversion/" ".CFUserTextEncoding" ".lldb/" ".wp-cli/" "VirtualBox VMs/" ".thumbnails/" ".zshrc~" ".DS_Store" "SASUniversityEdition/" ".synfig-gdk-loaders" ".docker/" ".gitkraken/" "Music/" ".config/" ".Rhistory" "../" "./")
+)
+
+;; ----- ido-unc-hosts-cache -----
+t
