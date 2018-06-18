@@ -7,32 +7,33 @@
 
 ;; ----- ido-work-directory-list -----
 (
- "/etc/"
  "/Users/alex/.emacs.d/"
+ "/etc/"
  "/Users/alex/Projects/"
  "/Users/alex/"
 )
 
 ;; ----- ido-work-file-list -----
 (
+ "test.el"
+ "test.html"
  "hosts"
  "config.el"
  "init.el"
  "wp-config.php"
  "test.css"
- "test.html"
  "config.org"
 )
 
 ;; ----- ido-dir-file-cache -----
 (
+ ("/Users/alex/" (23335 24324 230293 707000) ".astropy/" ".viminfo" ".bash_history" ".gitconfig" ".cache/" "Downloads/" ".zcompdump-Alex’s MacBook Pro-5.3" ".oh-my-zsh/" ".bash_profile" ".vscode/" ".rstudio-desktop/" "Documents/" ".npm/" ".jupyter/" ".ipynb_checkpoints/" ".Trash/" ".Rapp.history" "Dropbox/" ".zsh-update" "Applications/" "Movies/" ".ssh/" ".sonarlint/" "MEGA/" ".sh_history" ".idlerc/" ".insert-shebang.log" ".dropbox/" "Public/" "Google Drive/" ".bash_sessions/" ".cups/" ".emacs.d/" ".spyder-py3/" ".oracle_jre_usage/" ".glue/" ".matplotlib/" "Library/" "Desktop/" ".ipython/" ".zsh_history" ".mysqlsh/" ".nvm/" ".pylint.d/" "Pictures/" "Projects/" "Creative Cloud Files/" ".local/" ".plotly/" "OneDrive/" ".zshrc" ".subversion/" ".CFUserTextEncoding" ".lldb/" ".wp-cli/" "VirtualBox VMs/" ".thumbnails/" ".zshrc~" ".DS_Store" "SASUniversityEdition/" ".synfig-gdk-loaders" ".docker/" ".gitkraken/" "Music/" ".config/" ".Rhistory" "../" "./")
+
+ ("/Users/alex/.emacs.d/" (23335 27205 508697 241000) ".gitignore~" ".git/" "elpa/" "recentf" ".#config.org" ".gitignore" "init.el" "url/" "auto-save-list/" "config.el" "recentf~" "tramp" "ido.last~" "config.org" "smex-items" "ido.last" "../" "./")
+
  ("/etc/" (23334 28439 62050 123000) "notify.conf" "mail.rc" "bashrc~previous" "newsyslog.conf" "mach_init_per_user.d/" "afpovertcp.cfg" "zprofile" "passwd" "mail.rc~orig" "services" "man.conf" "cups/" "protocols" "shells~orig" "wfs/" "com.apple.screensharing.agent.launchd" "paths~orig" "aliases" "openldap/" "fstab.hd" "master.passwd" "rpc" "gettytab~orig" "ntp.conf" "pf.anchors/" "pf.os" "postfix/" "efax.rc~previous" "hosts" "kern_loader.conf~previous" "hostconfig" "nfs.conf~orig" "hosts~orig" "afpovertcp.cfg~orig" "rc.netboot" "moduli~previous" "asl.conf" "sudo_lecture" "sudoers~orig" "nfs.conf" "resolv.conf" "locate.rc" "profile~orig" "ntp_opendirectory.conf" "fstab.hd~previous" "csh.cshrc" "profile" "mach_init_per_login_session.d/" "ftpusers" "ssh/" "autofs.conf" "apache2/" "rpc~previous" "find.codes" "networks" "hosts.equiv" "defaults/" "zshrc" "pam.d/" "irbrc" "newsyslog.d/" "auto_master~orig" "find.codes~orig" "bashrc" "ftpusers~orig" "sudoers" "pf.conf" "localtime" "php.ini.default" "xtab" "csh.cshrc~orig" "rmtab" "paths" "php-fpm.conf.default" "group~previous" "php-fpm.d/" "ttys" "rc.common~previous" "shells" "ppp/" "manpaths.d/" "php.ini.default-previous" "auto_home" "group" "protocols~previous" "security/" "rtadvd.conf" "csh.login~orig" "asl/" "paths.d/" "networks~orig" "kern_loader.conf" "master.passwd~orig" "gettytab" "snmp/" "racoon/" "bashrc_Apple_Terminal" "aliases.db" "csh.logout" "ttys~previous" "nanorc" "ssl/" "sudoers.d/" "krb5.keytab" "syslog.conf~previous" "rtadvd.conf~previous" "syslog.conf" "mach_init.d/" "csh.login" "auto_master" "csh.logout~orig" "rc.common" "dnsextd.conf" "services~previous" "manpaths" "periodic/" "ntp-restrict.conf" "emond.d/" "kcpassword" "../" "./")
 
  ("/Users/" (23233 40960 301800 532000) "Guest/" "Shared/" ".localized" "Deleted Users/" "alex/" "../" "./")
-
- ("/Users/alex/" (23335 5212 736193 386000) ".astropy/" ".viminfo" ".bash_history" ".gitconfig" ".cache/" "Downloads/" ".zcompdump-Alex’s MacBook Pro-5.3" ".oh-my-zsh/" ".bash_profile" ".vscode/" ".rstudio-desktop/" "Documents/" ".npm/" ".jupyter/" ".ipynb_checkpoints/" ".Trash/" ".Rapp.history" "Dropbox/" ".zsh-update" "Applications/" "Movies/" ".ssh/" ".sonarlint/" "MEGA/" ".sh_history" ".idlerc/" ".insert-shebang.log" ".dropbox/" "Public/" "Google Drive/" ".bash_sessions/" ".cups/" ".emacs.d/" ".spyder-py3/" ".oracle_jre_usage/" ".glue/" ".matplotlib/" "Library/" "Desktop/" ".ipython/" ".zsh_history" ".mysqlsh/" ".nvm/" ".pylint.d/" "Pictures/" "Projects/" "Creative Cloud Files/" ".local/" ".plotly/" "OneDrive/" ".zshrc" ".subversion/" ".CFUserTextEncoding" ".lldb/" ".wp-cli/" "VirtualBox VMs/" ".thumbnails/" ".zshrc~" ".DS_Store" "SASUniversityEdition/" ".synfig-gdk-loaders" ".docker/" ".gitkraken/" "Music/" ".config/" ".Rhistory" "../" "./")
-
- ("/Users/alex/.emacs.d/" (23335 3106 536560 608000) ".gitignore~" ".git/" "elpa/" ".gitignore" "init.el" "url/" "auto-save-list/" "config.el" "ido.last~" "config.org" "smex-items" "init.el~" "ido.last" "../" "./")
 
  ("/Users/alex/Projects/" (23313 10686 353372 753000) ".ipynb_checkpoints/" "wp-completion.bash" "www/" ".DS_Store" "wtf.png" "wp-config.php" ".Rhistory" "../" "./")
 )

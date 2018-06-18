@@ -7,6 +7,8 @@
   :init (beacon-mode 1))
 
 (setq org-src-window-setup 'current-window)
+(add-to-list 'org-structure-template-alist
+	     '("el" "#+BEGIN_SRC emacs-lisp\n?\n#+END_SRC"))
 
 (use-package org-bullets
   :ensure t
@@ -41,6 +43,12 @@
   :init (dolist (hook '(css-mode-hook html-mode-hook sass-mode-hook))
 	  (add-hook hook 'rainbow-mode)))
 
+(use-package rainbow-delimiters
+  :ensure t
+  :init
+  (add-hook 'prog-mode-hookd #'rainbow-delimiters-mode)
+  (rainbow-delimiters-mode 1))
+
 (use-package switch-window
   :ensure t
   :config
@@ -59,6 +67,17 @@
 (use-package sudo-edit
   :ensure t
   :bind ("s-e" . sudo-edit))
+
+(use-package dashboard
+  :ensure t
+  :config
+  (dashboard-setup-startup-hook)
+  (setq dashboard-items '((recents . 10)))
+  (setq dashboard-banner-logo-title "Welcome to the world of Emacs!"))
+
+(use-package company
+  :ensure t
+  :init (add-hook 'after-initial-hook 'global-company-mode))
 
 (defun split-and-follow-horizontally ()
   (interactive)
@@ -105,6 +124,7 @@
 (menu-bar-mode -1)
 (scroll-bar-mode -1)
 (defalias 'yes-or-no-p 'y-or-n-p)
+(display-time-mode 1)
 (setq inhibit-startup-message t)
 (setq column-number-mode t)
 (setq line-number-mode t)

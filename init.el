@@ -27,10 +27,10 @@
  '(custom-safe-themes
    (quote
     ("bffa9739ce0752a37d9b1eee78fc00ba159748f50dc328af4be661484848e476" default)))
- '(org-agenda-files (quote ("~/test.org")))
+ '(org-agenda-files nil)
  '(package-selected-packages
    (quote
-    (sudo-edit hungry-delete switch-window rainbow-mode avy smex ido-vertical-mode org-bullets beacon which-key use-package spacemacs-theme))))
+    (company rainbow-delimiters sudo-edit hungry-delete switch-window rainbow-mode avy smex ido-vertical-mode org-bullets beacon which-key use-package spacemacs-theme))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

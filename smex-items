@@ -1,16 +1,19 @@
 
 ;; ----- smex-history -----
 (
+ battery
+ customize-group
+ list-packages
  rainbow-mode
  cd
  5x5
  arp
- dbx
- dig
- erc
 )
 
 ;; ----- smex-data -----
 (
  (rainbow-mode . 2)
+ (list-packages . 1)
+ (customize-group . 1)
+ (battery . 1)
 )

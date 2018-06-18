@@ -1,3 +1,4 @@
+
 * Which-key
 ** Install and configure which-key to display keyboard help 
 #+BEGIN_SRC emacs-lisp
@@ -16,6 +17,8 @@
 ** Basic configuration of org mode
 #+BEGIN_SRC emacs-lisp
   (setq org-src-window-setup 'current-window)
+  (add-to-list 'org-structure-template-alist
+	       '("el" "#+BEGIN_SRC emacs-lisp\n?\n#+END_SRC"))
 #+END_SRC
 ** Install and configure org-bullets to pretty up org-mode outline
 #+BEGIN_SRC emacs-lisp
@@ -72,6 +75,14 @@
     :init (dolist (hook '(css-mode-hook html-mode-hook sass-mode-hook))
 	    (add-hook hook 'rainbow-mode)))
 #+END_SRC
+** Install and configure rainbow-delimiters that highlights matching parenthesis etc
+#+BEGIN_SRC emacs-lisp
+  (use-package rainbow-delimiters
+    :ensure t
+    :init
+    (add-hook 'prog-mode-hookd #'rainbow-delimiters-mode)
+    (rainbow-delimiters-mode 1))
+#+END_SRC
 * Switch-window
 ** Install and configure the switch-window management package
 #+BEGIN_SRC emacs-lisp
@@ -99,6 +110,23 @@
   (use-package sudo-edit
     :ensure t
     :bind ("s-e" . sudo-edit))
+#+END_SRC
+* Dashboard
+** Install and configure dashboard to make a better Emacs starting experience
+#+BEGIN_SRC emacs-lisp
+  (use-package dashboard
+    :ensure t
+    :config
+    (dashboard-setup-startup-hook)
+    (setq dashboard-items '((recents . 10)))
+    (setq dashboard-banner-logo-title "Welcome to the world of Emacs!"))
+#+END_SRC
+* Autocompletion
+** Install company package and set up base configuration
+#+BEGIN_SRC emacs-lisp
+  (use-package company
+    :ensure t
+    :init (add-hook 'after-initial-hook 'global-company-mode))
 #+END_SRC
 * Convenient user functions
 ** Window splitting functions
@@ -165,6 +193,7 @@
   (menu-bar-mode -1)
   (scroll-bar-mode -1)
   (defalias 'yes-or-no-p 'y-or-n-p)
+  (display-time-mode 1)
   (setq inhibit-startup-message t)
   (setq column-number-mode t)
   (setq line-number-mode t)
@@ -207,7 +236,7 @@
     (interactive (list my-term-shell)))
   (ad-activate 'ansi-term)
 #+END_SRC
-** Setup global keyboard remapping
+**  Setup global keyboard remapping
 #+BEGIN_SRC emacs-lisp
   (global-set-key (kbd "M-x") 'smex)
   (global-set-key (kbd "C-c e") 'config-visit)
