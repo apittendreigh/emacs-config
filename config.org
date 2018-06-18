@@ -126,7 +126,42 @@
 #+BEGIN_SRC emacs-lisp
   (use-package company
     :ensure t
-    :init (add-hook 'after-initial-hook 'global-company-mode))
+    :init
+    (add-hook 'after-initial-hook 'global-company-mode))
+#+END_SRC
+* Mode line
+** Install and configure the spaceline modeline package (prettier than std)
+#+BEGIN_SRC emacs-lisp
+  (use-package spaceline
+    :ensure t
+    :config
+    (require 'spaceline-config)
+    (setq powerline-default-separator (quote arrow))
+    (spaceline-spacemacs-theme))
+#+END_SRC
+** Install and configure the diminish package to reduce clutter on modeline
+#+BEGIN_SRC emacs-lisp
+  (use-package diminish
+    :ensure t
+    :init
+    (diminish 'hungry-delete-mode)
+    (diminish 'beacon-mode)
+    (diminish 'subword-mode)
+    (diminish 'rainbow-mode)
+    (diminish 'which-key-mode))
+#+END_SRC
+* Dmenu
+** Install and configure dmenu to launch external apps
+#+BEGIN_SRC emacs-lisp
+  (use-package dmenu
+    :ensure t
+    :bind ("C-SPC" . 'dmenu))
+#+END_SRC
+* Symon
+#+BEGIN_SRC emacs-lisp
+  (use-package symon
+    :ensure t
+    :bind ("M-s-h" . 'symon-mode))
 #+END_SRC
 * Convenient user functions
 ** Window splitting functions
@@ -192,6 +227,8 @@
   (tool-bar-mode -1)
   (menu-bar-mode -1)
   (scroll-bar-mode -1)
+  (rainbow-mode 1)
+  (global-company-mode 1)
   (defalias 'yes-or-no-p 'y-or-n-p)
   (display-time-mode 1)
   (setq inhibit-startup-message t)

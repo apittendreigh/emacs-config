@@ -77,7 +77,32 @@
 
 (use-package company
   :ensure t
-  :init (add-hook 'after-initial-hook 'global-company-mode))
+  :init
+  (add-hook 'after-initial-hook 'global-company-mode))
+
+(use-package spaceline
+  :ensure t
+  :config
+  (require 'spaceline-config)
+  (setq powerline-default-separator (quote arrow))
+  (spaceline-spacemacs-theme))
+
+(use-package diminish
+  :ensure t
+  :init
+  (diminish 'hungry-delete-mode)
+  (diminish 'beacon-mode)
+  (diminish 'subword-mode)
+  (diminish 'rainbow-mode)
+  (diminish 'which-key-mode))
+
+(use-package dmenu
+  :ensure t
+  :bind ("C-SPC" . 'dmenu))
+
+(use-package symon
+  :ensure t
+  :bind ("M-s-h" . 'symon-mode))
 
 (defun split-and-follow-horizontally ()
   (interactive)
@@ -123,6 +148,8 @@
 (tool-bar-mode -1)
 (menu-bar-mode -1)
 (scroll-bar-mode -1)
+(rainbow-mode 1)
+(global-company-mode 1)
 (defalias 'yes-or-no-p 'y-or-n-p)
 (display-time-mode 1)
 (setq inhibit-startup-message t)

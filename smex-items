@@ -1,13 +1,13 @@
 
 ;; ----- smex-history -----
 (
+ global-company-mode
+ company-mode
  battery
  customize-group
  list-packages
  rainbow-mode
  cd
- 5x5
- arp
 )
 
 ;; ----- smex-data -----
@@ -16,4 +16,6 @@
  (list-packages . 1)
  (customize-group . 1)
  (battery . 1)
+ (company-mode . 1)
+ (global-company-mode . 2)
 )
