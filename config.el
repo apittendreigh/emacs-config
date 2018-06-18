@@ -85,19 +85,36 @@
   (interactive)
   (org-babel-load-file (expand-file-name "~/.emacs.d/config.org")))
 
-(setq inhibit-startup-message t)
+(defun kill-curr-buffer ()
+  (interactive)
+  (kill-buffer (current-buffer)))
+
+(defun copy-whole-line ()
+  (interactive)
+  (save-excursion
+    (kill-new
+     (buffer-substring
+      (point-at-bol)
+      (point-at-eol)))))
+
+(defun kill-all-buffers ()
+  (interactive)
+  (mapc 'kill-buffer (buffer-list)))
+
 (tool-bar-mode -1)
 (menu-bar-mode -1)
 (scroll-bar-mode -1)
 (defalias 'yes-or-no-p 'y-or-n-p)
+(setq inhibit-startup-message t)
 (setq column-number-mode t)
+(setq line-number-mode t)
 (setq scroll-conservatively 100)
 (setq ring-bell-function 'ignore)
 (when window-system (global-hl-line-mode t))
 (when window-system (global-prettify-symbols-mode t))
 (setq make-backup-file nil)
 (setq auto-save-default nil)
-(global-subword-mode 1)
+(setq global-subword-mode t)
 
 (setq electric-pair-pairs '(
 			    (?\( . ?\))
@@ -130,3 +147,6 @@
 (global-set-key (kbd "C-x 2") 'split-and-follow-horizontally)
 (global-set-key (kbd "C-x 3") 'split-and-follow-vertically)
 (global-set-key (kbd "C-c w w") 'kill-whole-word)
+(global-set-key (kbd "C-x k") 'kill-curr-buffer)
+(global-set-key (kbd "C-c w l") 'copy-whole-line)
+(global-set-key (kbd "C-C k a") 'kill-all-buffers)
