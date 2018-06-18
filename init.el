@@ -30,7 +30,7 @@
  '(org-agenda-files (quote ("~/test.org")))
  '(package-selected-packages
    (quote
-    (switch-window rainbow-mode avy smex ido-vertical-mode org-bullets beacon which-key use-package spacemacs-theme))))
+    (sudo-edit hungry-delete switch-window rainbow-mode avy smex ido-vertical-mode org-bullets beacon which-key use-package spacemacs-theme))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

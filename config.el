@@ -1,8 +1,3 @@
-(defvar my-term-shell "/bin/zsh")
-(defadvice ansi-term (before force-bash)
-  (interactive (list my-term-shell)))
-(ad-activate 'ansi-term)
-
 (use-package which-key
   :ensure t
   :init (which-key-mode))
@@ -10,6 +5,8 @@
 (use-package beacon
   :ensure t
   :init (beacon-mode 1))
+
+(setq org-src-window-setup 'current-window)
 
 (use-package org-bullets
   :ensure t
@@ -39,14 +36,6 @@
   :ensure t
   :bind ("M-s" . avy-goto-char))
 
-(defun config-visit ()
-  (interactive)
-  (find-file "~/.emacs.d/config.org"))
-
-(defun config-reload ()
-  (interactive)
-  (org-babel-load-file (expand-file-name "~/.emacs.d/config.org")))
-
 (use-package rainbow-mode
   :ensure t
   :init (dolist (hook '(css-mode-hook html-mode-hook sass-mode-hook))
@@ -60,8 +49,16 @@
   (setq switch-window-threshold 2)
   (setq switch-window-shortcut-style 'qwerty)
   (setq switch-window-qwerty-shortcuts
-	'("a" "s" "d" "f" "j" "k" "l"))
+	'("a" "s" "d" "f" "h" "j" "k" "l"))
   :bind ([remap other-window] . switch-window))
+
+(use-package hungry-delete
+  :ensure t
+  :config (global-hungry-delete-mode))
+
+(use-package sudo-edit
+  :ensure t
+  :bind ("s-e" . sudo-edit))
 
 (defun split-and-follow-horizontally ()
   (interactive)
@@ -75,6 +72,19 @@
   (balance-windows)
   (other-window 1))
 
+(defun kill-whole-word ()
+  (interactive)
+  (backward-word)
+  (kill-word 1))
+
+(defun config-visit ()
+  (interactive)
+  (find-file "~/.emacs.d/config.org"))
+
+(defun config-reload ()
+  (interactive)
+  (org-babel-load-file (expand-file-name "~/.emacs.d/config.org")))
+
 (setq inhibit-startup-message t)
 (tool-bar-mode -1)
 (menu-bar-mode -1)
@@ -87,6 +97,14 @@
 (when window-system (global-prettify-symbols-mode t))
 (setq make-backup-file nil)
 (setq auto-save-default nil)
+(global-subword-mode 1)
+
+(setq electric-pair-pairs '(
+			    (?\( . ?\))
+			    (?\[ . ?\])
+			    (?\{ . ?\})
+			    (?\< . ?\>)))
+(electric-pair-mode t)
 
 (set-frame-position (selected-frame) 50 50)
 (setq initial-frame-alist
@@ -100,9 +118,15 @@
 	(height . 450) ; lines
 	))
 
+(defvar my-term-shell "/bin/zsh")
+(defadvice ansi-term (before force-bash)
+  (interactive (list my-term-shell)))
+(ad-activate 'ansi-term)
+
 (global-set-key (kbd "M-x") 'smex)
 (global-set-key (kbd "C-c e") 'config-visit)
 (global-set-key (kbd "C-c r") 'config-reload)
 (global-set-key (kbd "s-<return>") 'ansi-term)
 (global-set-key (kbd "C-x 2") 'split-and-follow-horizontally)
 (global-set-key (kbd "C-x 3") 'split-and-follow-vertically)
+(global-set-key (kbd "C-c w w") 'kill-whole-word)
