@@ -30,7 +30,7 @@
  '(org-agenda-files nil)
  '(package-selected-packages
    (quote
-    (pretty-mode expand-region mark-multiple swiper popup-kill-ring symon dmenu diminish spaceline company rainbow-delimiters sudo-edit hungry-delete switch-window rainbow-mode avy smex ido-vertical-mode org-bullets beacon which-key use-package spacemacs-theme))))
+    (company-irony pretty-mode expand-region mark-multiple swiper popup-kill-ring symon dmenu diminish spaceline company rainbow-delimiters sudo-edit hungry-delete switch-window rainbow-mode avy smex ido-vertical-mode org-bullets beacon which-key use-package spacemacs-theme))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

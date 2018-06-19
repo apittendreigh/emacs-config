@@ -18,4 +18,5 @@
  (battery . 1)
  (company-mode . 1)
  (global-company-mode . 2)
+ (irony-install-server . 5)
 )

@@ -75,11 +75,6 @@
   (setq dashboard-items '((recents . 10)))
   (setq dashboard-banner-logo-title "Welcome to the world of Emacs!"))
 
-(use-package company
-  :ensure t
-  :init
-  (add-hook 'after-initial-hook 'global-company-mode))
-
 (use-package spaceline
   :ensure t
   :config
@@ -167,7 +162,6 @@
 (tool-bar-mode -1)
 (menu-bar-mode -1)
 (scroll-bar-mode -1)
-(global-company-mode 1)
 (defalias 'yes-or-no-p 'y-or-n-p)
 (display-time-mode 1)
 (setq inhibit-startup-message t)
