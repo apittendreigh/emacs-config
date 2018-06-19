@@ -106,6 +106,10 @@
   :ensure t
   :bind ("M-y" . popup-kill-ring))
 
+(use-package swiper
+	     :ensure t
+	     :bind ("C-s" . swiper))
+
 (defun split-and-follow-horizontally ()
   (interactive)
   (split-window-below)

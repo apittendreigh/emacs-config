@@ -167,6 +167,13 @@
     :ensure t
     :bind ("M-y" . popup-kill-ring))
 #+END_SRC
+* Swiper
+** Install and configure swiper, an advanced search system
+#+BEGIN_SRC emacs-lisp
+  (use-package swiper
+	       :ensure t
+	       :bind ("C-s" . swiper))
+#+END_SRC
 * Convenient user functions
 ** Window splitting functions
 #+BEGIN_SRC emacs-lisp

@@ -28,6 +28,8 @@
 
 ;; ----- ido-dir-file-cache -----
 (
+ ("/Users/alex/ihsec/" (23336 31647 665787 407000) ".git/" "README.org" "ihsec.sh" "Makefile" "LICENSE" "../" "./")
+
  ("/Users/alex/.emacs.d/" (23335 46069 564182 478000) ".gitignore~" ".git/" "elpa/" "recentf" ".#config.org" ".gitignore" "init.el" "url/" "auto-save-list/" "config.el" "recentf~" "tramp" "ido.last~" "config.org" "smex-items" "ido.last" "../" "./")
 
  ("/Users/alex/" (23335 45676 848396 170000) ".astropy/" ".viminfo" ".bash_history" ".gitconfig" ".cache/" "Downloads/" ".zcompdump-Alex’s MacBook Pro-5.3" ".oh-my-zsh/" ".bash_profile" ".vscode/" ".rstudio-desktop/" "Documents/" ".npm/" ".jupyter/" ".ipynb_checkpoints/" ".Trash/" ".Rapp.history" "Dropbox/" ".zsh-update" "Applications/" "Movies/" ".ssh/" ".sonarlint/" "MEGA/" ".sh_history" ".idlerc/" ".insert-shebang.log" ".dropbox/" "Public/" "Google Drive/" ".bash_sessions/" ".cups/" ".emacs.d/" ".spyder-py3/" ".oracle_jre_usage/" ".glue/" ".matplotlib/" "Library/" "Desktop/" ".ipython/" ".zsh_history" ".mysqlsh/" ".nvm/" ".pylint.d/" "Pictures/" "Projects/" "Creative Cloud Files/" ".local/" ".plotly/" "OneDrive/" ".zshrc" ".subversion/" ".CFUserTextEncoding" ".lldb/" ".wp-cli/" "VirtualBox VMs/" ".thumbnails/" ".zshrc~" ".DS_Store" "SASUniversityEdition/" ".synfig-gdk-loaders" ".docker/" ".gitkraken/" "Music/" ".config/" ".Rhistory" "../" "./")
