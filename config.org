@@ -1,4 +1,6 @@
 
+
+
 * Which-key
 ** Install and configure which-key to display keyboard help 
 #+BEGIN_SRC emacs-lisp
@@ -148,20 +150,22 @@
     (diminish 'beacon-mode)
     (diminish 'subword-mode)
     (diminish 'rainbow-mode)
+    (diminish 'company-mode)
+    (diminish 'page-break-lines-mode)
     (diminish 'which-key-mode))
-#+END_SRC
-* Dmenu
-** Install and configure dmenu to launch external apps
-#+BEGIN_SRC emacs-lisp
-  (use-package dmenu
-    :ensure t
-    :bind ("C-SPC" . 'dmenu))
 #+END_SRC
 * Symon
 #+BEGIN_SRC emacs-lisp
   (use-package symon
     :ensure t
     :bind ("M-s-h" . 'symon-mode))
+#+END_SRC
+* Popup-kill-ring
+** Install and configure popup-kill-ring to display menu for easier access to the kill ring
+#+BEGIN_SRC emacs-lisp
+  (use-package popup-kill-ring
+    :ensure t
+    :bind ("M-y" . popup-kill-ring))
 #+END_SRC
 * Convenient user functions
 ** Window splitting functions
@@ -227,7 +231,6 @@
   (tool-bar-mode -1)
   (menu-bar-mode -1)
   (scroll-bar-mode -1)
-  (rainbow-mode 1)
   (global-company-mode 1)
   (defalias 'yes-or-no-p 'y-or-n-p)
   (display-time-mode 1)

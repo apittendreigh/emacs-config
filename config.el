@@ -94,15 +94,17 @@
   (diminish 'beacon-mode)
   (diminish 'subword-mode)
   (diminish 'rainbow-mode)
+  (diminish 'company-mode)
+  (diminish 'page-break-lines-mode)
   (diminish 'which-key-mode))
-
-(use-package dmenu
-  :ensure t
-  :bind ("C-SPC" . 'dmenu))
 
 (use-package symon
   :ensure t
   :bind ("M-s-h" . 'symon-mode))
+
+(use-package popup-kill-ring
+  :ensure t
+  :bind ("M-y" . popup-kill-ring))
 
 (defun split-and-follow-horizontally ()
   (interactive)
@@ -148,7 +150,6 @@
 (tool-bar-mode -1)
 (menu-bar-mode -1)
 (scroll-bar-mode -1)
-(rainbow-mode 1)
 (global-company-mode 1)
 (defalias 'yes-or-no-p 'y-or-n-p)
 (display-time-mode 1)
