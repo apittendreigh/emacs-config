@@ -1,6 +1,3 @@
-
-
-
 * Which-key
 ** Install and configure which-key to display keyboard help 
 #+BEGIN_SRC emacs-lisp
@@ -21,6 +18,7 @@
   (setq org-src-window-setup 'current-window)
   (add-to-list 'org-structure-template-alist
 	       '("el" "#+BEGIN_SRC emacs-lisp\n?\n#+END_SRC"))
+  (add-hook 'org-mode-hook 'org-indent-mode)
 #+END_SRC
 ** Install and configure org-bullets to pretty up org-mode outline
 #+BEGIN_SRC emacs-lisp
@@ -74,8 +72,7 @@
 #+BEGIN_SRC emacs-lisp
   (use-package rainbow-mode
     :ensure t
-    :init (dolist (hook '(css-mode-hook html-mode-hook sass-mode-hook))
-	    (add-hook hook 'rainbow-mode)))
+    :init (add-hook 'prog-mode-hook 'rainbow-mode))
 #+END_SRC
 ** Install and configure rainbow-delimiters that highlights matching parenthesis etc
 #+BEGIN_SRC emacs-lisp
@@ -173,6 +170,28 @@
   (use-package swiper
 	       :ensure t
 	       :bind ("C-s" . swiper))
+#+END_SRC
+* Mark-multiple
+** Install and configure mark-multiple, a better way to mark mutiple regions
+#+BEGIN_SRC emacs-lisp
+  (use-package mark-multiple
+    :ensure t
+    :bind ("C-c q" . 'mark-next-like-this))
+#+End_SRC
+* Expand-region
+** Install and configure expand-region to allow quick and easy expansion of marked regions
+#+BEGIN_SRC emacs-lisp
+  (use-package expand-region
+    :ensure t
+    :bind ("C-q" . er/expand-region))
+#+END_SRC
+* Pretty Symbols
+** Install and configure pretty-mode to change =lambda= and others to a symbol in GUI mode only
+#+BEGIN_SRC emacs-lisp
+  (when window-system
+    (use-package pretty-mode
+      :ensure t
+      :config (global-pretty-mode t)))
 #+END_SRC
 * Convenient user functions
 ** Window splitting functions
@@ -275,7 +294,6 @@
 	  (height . 450) ; lines
 	  ))
 #+END_SRC
-
 ** Setting inbuilt shell to zsh
 #+BEGIN_SRC emacs-lisp
   (defvar my-term-shell "/bin/zsh")

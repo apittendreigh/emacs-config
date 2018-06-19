@@ -9,6 +9,7 @@
 (setq org-src-window-setup 'current-window)
 (add-to-list 'org-structure-template-alist
 	     '("el" "#+BEGIN_SRC emacs-lisp\n?\n#+END_SRC"))
+(add-hook 'org-mode-hook 'org-indent-mode)
 
 (use-package org-bullets
   :ensure t
@@ -40,8 +41,7 @@
 
 (use-package rainbow-mode
   :ensure t
-  :init (dolist (hook '(css-mode-hook html-mode-hook sass-mode-hook))
-	  (add-hook hook 'rainbow-mode)))
+  :init (add-hook 'prog-mode-hook 'rainbow-mode))
 
 (use-package rainbow-delimiters
   :ensure t
@@ -109,6 +109,19 @@
 (use-package swiper
 	     :ensure t
 	     :bind ("C-s" . swiper))
+
+(use-package mark-multiple
+  :ensure t
+  :bind ("C-c q" . 'mark-next-like-this))
+
+(use-package expand-region
+  :ensure t
+  :bind ("C-q" . er/expand-region))
+
+(when window-system
+  (use-package pretty-mode
+    :ensure t
+    :config (global-pretty-mode t)))
 
 (defun split-and-follow-horizontally ()
   (interactive)
