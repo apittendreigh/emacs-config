@@ -113,7 +113,7 @@
 #+END_SRC
 * Auto-complete
 ** Install and configure the auto-complete package to have auto completion facility
-#+BEGIN_SRC emacs-lisp
+q#+BEGIN_SRC emacs-lisp
   (use-package auto-complete
     :ensure t
     :init (ac-config-default))
@@ -192,6 +192,17 @@
     (use-package pretty-mode
       :ensure t
       :config (global-pretty-mode t)))
+#+END_SRC
+* Emmet-Mode
+** Install and configure emmet-mode to assist in development of HTML/CSS
+#+BEGIN_SRC emacs-lisp
+  (use-package  emmet-mode
+    :ensure t
+    :config
+    (add-hook 'sqml-mode-hook 'emmet-mode)
+    (add-hook 'css-mode-hook 'emmet-mode)
+    (setq emmet-move-cursor-between-quotes t)
+    :bind ("C-j" . emmet-expand-line))
 #+END_SRC
 * Convenient user functions
 ** Window splitting functions
