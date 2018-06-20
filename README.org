@@ -1,0 +1,2 @@
+* My Emacs configuration
+This is the repository for my own personal configuration for the Emacs editor. You are more than welcome to use it if you find it useful, just be aware that it may (probably) change quite a bit over time. I offer no guarantees at all that it will work on your system.
