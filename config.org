@@ -111,6 +111,13 @@
     :ensure t
     :bind ("s-e" . sudo-edit))
 #+END_SRC
+* Auto-complete
+** Install and configure the auto-complete package to have auto completion facility
+#+BEGIN_SRC emacs-lisp
+  (use-package auto-complete
+    :ensure t
+    :init (ac-config-default))
+#+END_SRC
 * Dashboard
 ** Install and configure dashboard to make a better Emacs starting experience
 #+BEGIN_SRC emacs-lisp
