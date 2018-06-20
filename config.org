@@ -113,7 +113,7 @@
 #+END_SRC
 * Auto-complete
 ** Install and configure the auto-complete package to have auto completion facility
-q#+BEGIN_SRC emacs-lisp
+#+BEGIN_SRC emacs-lisp
   (use-package auto-complete
     :ensure t
     :init (ac-config-default))
@@ -150,7 +150,9 @@ q#+BEGIN_SRC emacs-lisp
     (diminish 'company-mode)
     (diminish 'page-break-lines-mode)
     (diminish 'which-key-mode)
-    (diminish 'org-indent-mode))
+    (diminish 'org-indent-mode)
+    (diminish 'auto-complete-mode)
+    (diminish 'abbrev-mode))
 #+END_SRC
 * Symon
 #+BEGIN_SRC emacs-lisp
@@ -214,6 +216,31 @@ q#+BEGIN_SRC emacs-lisp
     (require 'emmet-mode)
     (add-hook 'sgml-mode-hook 'ac-emmet-html-setup)
     (add-hook 'css-mode-hook 'ac-emmet-css-setup))
+#+END_SRC
+* Web-Mode
+** Install and configure web-mode for an enhanced web development environment
+#+BEGIN_SRC emacs-lisp
+  (use-package web-mode
+    :ensure t
+    :config
+    (add-to-list 'auto-mode-alist '("\\.html?\\'" . 'web-mode))
+    (add-to-list 'auto-mode-alist '("\\.phtml\\'" . 'web-mode))
+    (add-to-list 'auto-mode-alist '("\\.tpl\\.php\\'" . 'web-mode))
+    (add-to-list 'auto-mode-alist '("\\.as[cp]x\\'" . 'web-mode))
+    (add-to-list 'auto-mode-alist '("\\.erb\\'" . 'web-mode)))
+#+END_SRC
+* Php-mode
+** Install and configure packages to allow a decent php editor
+#+BEGIN_SRC emacs-lisp
+  (use-package php-mode
+    :ensure t)
+#+END_SRC
+* Flycheck
+** Install and configure flycheck to allow decent syntax checking
+#+BEGIN_SRC emacs-lisp
+  (use-package flycheck
+       :ensure t
+       :init (global-flycheck-mode))
 #+END_SRC
 * Convenient user functions
 ** Window splitting functions
