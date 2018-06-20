@@ -149,7 +149,8 @@ q#+BEGIN_SRC emacs-lisp
     (diminish 'rainbow-mode)
     (diminish 'company-mode)
     (diminish 'page-break-lines-mode)
-    (diminish 'which-key-mode))
+    (diminish 'which-key-mode)
+    (diminish 'org-indent-mode))
 #+END_SRC
 * Symon
 #+BEGIN_SRC emacs-lisp
@@ -203,6 +204,16 @@ q#+BEGIN_SRC emacs-lisp
     (add-hook 'css-mode-hook 'emmet-mode)
     (setq emmet-move-cursor-between-quotes t)
     :bind ("C-j" . emmet-expand-line))
+#+END_SRC
+** Install and configure the ac-emmet to add autocompletion for emmet snippets
+#+BEGIN_SRC emacs-lisp
+  (use-package ac-emmet
+    :ensure t
+    :init
+    (require 'auto-complete)
+    (require 'emmet-mode)
+    (add-hook 'sgml-mode-hook 'ac-emmet-html-setup)
+    (add-hook 'css-mode-hook 'ac-emmet-css-setup))
 #+END_SRC
 * Convenient user functions
 ** Window splitting functions
