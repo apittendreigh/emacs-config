@@ -1,5 +1,6 @@
 
 
+
 * Which-key
 ** Install and configure which-key to display keyboard help 
 #+BEGIN_SRC emacs-lisp
@@ -153,7 +154,9 @@
     (diminish 'which-key-mode)
     (diminish 'org-indent-mode)
     (diminish 'auto-complete-mode)
-    (diminish 'abbrev-mode))
+    (diminish 'abbrev-mode)
+    (diminish 'yas-minor-mode)
+    (diminish 'flycheck-mode))
 #+END_SRC
 * Symon
 #+BEGIN_SRC emacs-lisp
@@ -224,7 +227,6 @@
   (use-package web-mode
     :ensure t
     :config
-    (add-to-list 'auto-mode-alist '("\\.html?\\'" . 'web-mode))
     (add-to-list 'auto-mode-alist '("\\.phtml\\'" . 'web-mode))
     (add-to-list 'auto-mode-alist '("\\.tpl\\.php\\'" . 'web-mode))
     (add-to-list 'auto-mode-alist '("\\.as[cp]x\\'" . 'web-mode))
@@ -255,6 +257,18 @@
   (use-package flycheck
        :ensure t
        :init (global-flycheck-mode))
+#+END_SRC
+* Yasnippet
+** Install and configure yasnippet - THE snippet package for Emacs
+#+BEGIN_SRC emacs-lisp
+  (use-package yasnippet
+    :ensure t
+    :config
+    (use-package yasnippet-snippets
+      :ensure t)
+    (yas-reload-all))
+
+  (add-hook 'prog-mode-hook 'yas-minor-mode)
 #+END_SRC
 * Convenient user functions
 ** Window splitting functions
