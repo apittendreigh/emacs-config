@@ -1,6 +1,5 @@
 
 
-
 * Which-key
 ** Install and configure which-key to display keyboard help 
 #+BEGIN_SRC emacs-lisp
@@ -251,6 +250,28 @@
                                 (define-key php-mode-map  (kbd "C-]") 'ac-php-find-symbol-at-point)
                                 (define-key php-mode-map  (kbd "C-t") 'ac-php-location-stack-back))))
 #+END_SRC
+** Install and configure phpcnf to enforce php coding standards
+#+BEGIN_SRC emacs-lisp
+  (use-package phpcbf
+    :ensure t
+    :config
+    (custom-set-variables
+   '(phpcbf-executable "/Users/alex/.composer/vendor/bin/phpcbf")
+   '(phpcbf-standard "PSR12"))
+    (add-hook 'php-mode-hook 'phpcbf-enable-on-save))
+#+END_SRC
+* Apache-mode
+** Install and configure apache -mode to allow useful editing of apache web server config files
+#+BEGIN_SRC emacs-lisp
+  (use-package apache-mode
+    :ensure t
+    :config
+    (add-to-list 'auto-mode-alist '("\\.htaccess\\'"   . apache-mode))
+    (add-to-list 'auto-mode-alist '("httpd\\.conf\\'"  . apache-mode))
+    (add-to-list 'auto-mode-alist '("srm\\.conf\\'"    . apache-mode))
+    (add-to-list 'auto-mode-alist '("access\\.conf\\'" . apache-mode))
+    (add-to-list 'auto-mode-alist '("sites-\\(available\\|enabled\\)/" . apache-mode)))
+#+END_SRC
 * Flycheck
 ** Install and configure flycheck to allow decent syntax checking
 #+BEGIN_SRC emacs-lisp
@@ -377,7 +398,7 @@
     (interactive (list my-term-shell)))
   (ad-activate 'ansi-term)
 #+END_SRC
-**  Setup global keyboard remapping
+** Setup global keyboard remapping
 #+BEGIN_SRC emacs-lisp
   (global-set-key (kbd "M-x") 'smex)
   (global-set-key (kbd "C-c e") 'config-visit)
@@ -389,4 +410,5 @@
   (global-set-key (kbd "C-x k") 'kill-curr-buffer)
   (global-set-key (kbd "C-c w l") 'copy-whole-line)
   (global-set-key (kbd "C-C k a") 'kill-all-buffers)
+  (global-set-key (kbd "C-c C-y") 'yas-new-snippet)
 #+END_SRC
