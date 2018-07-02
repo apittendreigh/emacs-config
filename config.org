@@ -1,5 +1,4 @@
 
-
 * Which-key
 ** Install and configure which-key to display keyboard help 
 #+BEGIN_SRC emacs-lisp
@@ -190,6 +189,19 @@
   (use-package expand-region
     :ensure t
     :bind ("C-q" . er/expand-region))
+#+END_SRC
+* Neotree
+** Install and configure neotree to provide optional file naviagtion side panel
+#+BEGIN_SRC emacs-lisp
+  (use-package neotree
+    :ensure t
+    :config (setq neo-theme (if (display-graphic-p) 'icons 'arrow)))
+#+END_SRC
+** Install and configure all-the-icons package for use in the neotree
+#+BEGIN_SRC emacs-lisp
+  (use-package all-the-icons
+    :ensure t
+    :config (setq inhibit-compacting-font-caches t))
 #+END_SRC
 * Pretty Symbols
 ** Install and configure pretty-mode to change =lambda= and others to a symbol in GUI mode only
@@ -411,4 +423,5 @@
   (global-set-key (kbd "C-c w l") 'copy-whole-line)
   (global-set-key (kbd "C-C k a") 'kill-all-buffers)
   (global-set-key (kbd "C-c C-y") 'yas-new-snippet)
+  (global-set-key [f8] 'neotree-toggle)
 #+END_SRC
