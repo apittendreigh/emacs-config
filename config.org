@@ -1,4 +1,5 @@
 
+
 * Which-key
 ** Install and configure which-key to display keyboard help 
 #+BEGIN_SRC emacs-lisp
@@ -331,6 +332,12 @@
 
   (add-hook 'prog-mode-hook 'yas-minor-mode)
 #+END_SRC
+* Magit
+** Install and configure magit to intehrate git functionality
+#+BEGIN_SRC emacs-lisp
+  (use-package magit
+    :ensure t)
+#+END_SRC
 * Convenient user functions
 ** Window splitting functions
 #+BEGIN_SRC emacs-lisp
@@ -451,5 +458,6 @@
   (global-set-key (kbd "C-c w l") 'copy-whole-line)
   (global-set-key (kbd "C-C k a") 'kill-all-buffers)
   (global-set-key (kbd "C-c C-y") 'yas-new-snippet)
+  (global-set-key (kbd "C-x g") 'magit-status)
   (global-set-key [f8] 'neotree-toggle)
 #+END_SRC
