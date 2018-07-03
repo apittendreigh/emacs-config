@@ -30,7 +30,7 @@
  '(org-agenda-files nil)
  '(package-selected-packages
    (quote
-    (all-the-icons neotree phpcbf yasnippet-snippets ac-php flycheck web-mode php-mode ac-emmet emmet-mode auto-complete company-irony pretty-mode expand-region mark-multiple swiper popup-kill-ring symon dmenu diminish spaceline company rainbow-delimiters sudo-edit hungry-delete switch-window rainbow-mode avy smex ido-vertical-mode org-bullets beacon which-key use-package spacemacs-theme)))
+    (django-snippets django-html-mode django-mode elpy all-the-icons neotree phpcbf yasnippet-snippets ac-php flycheck web-mode php-mode ac-emmet emmet-mode auto-complete company-irony pretty-mode expand-region mark-multiple swiper popup-kill-ring symon dmenu diminish spaceline company rainbow-delimiters sudo-edit hungry-delete switch-window rainbow-mode avy smex ido-vertical-mode org-bullets beacon which-key use-package spacemacs-theme)))
  '(phpcbf-executable "/Users/alex/.composer/vendor/bin/phpcbf")
  '(phpcbf-standard "PSR12"))
 (custom-set-faces

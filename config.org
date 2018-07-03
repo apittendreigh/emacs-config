@@ -154,7 +154,8 @@
     (diminish 'auto-complete-mode)
     (diminish 'abbrev-mode)
     (diminish 'yas-minor-mode)
-    (diminish 'flycheck-mode))
+    (diminish 'flycheck-mode)
+    (diminish 'eldoc-mode))
 #+END_SRC
 * Symon
 #+BEGIN_SRC emacs-lisp
@@ -271,6 +272,33 @@
    '(phpcbf-executable "/Users/alex/.composer/vendor/bin/phpcbf")
    '(phpcbf-standard "PSR12"))
     (add-hook 'php-mode-hook 'phpcbf-enable-on-save))
+#+END_SRC
+* Elpy
+** Install and configure elpy for python development
+#+BEGIN_SRC emacs-lisp
+  (use-package elpy
+    :ensure t
+    :config
+    (elpy-enable)
+    (defalias 'workon 'pyvenv-workon))
+#+END_SRC
+** Install and configure django-mode for django web development
+#+BEGIN_SRC emacs-lisp
+  (use-package django-mode
+    :ensure t
+    :config
+    (require 'django-html-mode)
+    (add-to-list 'auto-mode-alist '("\\.djhtml$" . django-html-mode)))
+#+END_SRC
+** Install and configure django-snippets
+#+BEGIN_SRC emacs-lisp
+  (use-package django-snippets
+    :ensure t
+    :config
+    (require 'django-html-mode)
+    (require 'django-mode)
+    (add-to-list 'auto-mode-alist '("\\.djhtml$" . django-html-mode))
+    (add-to-list 'auto-mode-alist '("\\.py$" . django-mode)))
 #+END_SRC
 * Apache-mode
 ** Install and configure apache -mode to allow useful editing of apache web server config files
